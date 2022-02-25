@@ -39,9 +39,8 @@ export default class TuitController implements TuitControllerI {
             app.get("/api/users/:uid/tuits", TuitController.tuitController.findAllTuitsByUser);
             app.get("/api/tuits/:uid", TuitController.tuitController.findTuitById);
             app.post("/api/users/:uid/tuits", TuitController.tuitController.createTuitByUser);
-            app.post("/api/tuits", TuitController.tuitController.createTuit);
             app.put("/api/tuits/:uid", TuitController.tuitController.updateTuit);
-            app.delete("/api/tuits/:uid", TuitController.tuitController.deleteTuit);
+            app.delete("/api/tuits/:tid", TuitController.tuitController.deleteTuit);
         }
         return TuitController.tuitController;
     }
@@ -91,9 +90,6 @@ export default class TuitController implements TuitControllerI {
         TuitController.tuitDao.createTuitByUser(req.params.uid, req.body)
             .then((tuit: Tuit) => res.json(tuit));
 
-    createTuit = (req: Request, res: Response) =>
-        TuitController.tuitDao.createTuit(req.body)
-            .then((tuit: Tuit) => res.json(tuit));
 
     /**
      * @param {Request} req Represents request from client, including path
