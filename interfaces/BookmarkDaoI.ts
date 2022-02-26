@@ -1,7 +1,10 @@
+/**
+ * @file RESTful Web service API interface for bookmarks resource
+ */
 import Bookmark from "../models/bookmarks/Bookmark";
 
 /**
- * @file Declares API for Likes related data access object methods
+ * @file Declares API for Bookmarks related data access object methods
  */
 export default interface BookmarkDaoI {
     findAllUsersThatBookmarkedTuit (tid: string): Promise<Bookmark[]>;

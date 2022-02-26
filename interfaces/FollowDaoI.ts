@@ -1,3 +1,6 @@
+/**
+ * @file RESTful Web service API interface for follows resource
+ */
 import Follow from "../models/follows/Follow"
 
 /**

@@ -1,3 +1,6 @@
+/**
+ * @file RESTful Web service API interface for tuits resource
+ */
 import Tuit from "../models/tuits/Tuit";
 
 /**

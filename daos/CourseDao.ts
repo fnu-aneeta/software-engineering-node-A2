@@ -1,11 +1,24 @@
+/**
+ * @file Implements DAO managing data storage of messages. Uses mongoose CourseModel
+ * to integrate with MongoDB
+ */
 import CourseDaoI from "../interfaces/CourseDao";
 import CourseModel from "../mongoose/courses/CourseModel";
 import Course from "../mongoose/courses/Course";
 import SectionDao from "./SectionDao";
 import mongoose from "mongoose";
 
+/**
+ * @class CourseDao Implements Data Access Object managing data storage
+ * of Users
+ * @property {CourseDao} courseDao Private single instance of MessageDao
+ */
 export default class CourseDao implements CourseDaoI {
     static courseDao: CourseDao = new CourseDao();
+    /**
+     * Creates singleton DAO instance
+     * @returns SectionDao
+     */
     sectionDao: SectionDao = SectionDao.getInstance();
     static getInstance(): CourseDao { return this.courseDao; }
     private constructor() {}
@@ -55,5 +68,5 @@ export default class CourseDao implements CourseDaoI {
     removeSectionFromCourse(cid: string, sid: string): Promise<any> {
         return Promise.resolve(undefined);
     }
-    
+
 }
