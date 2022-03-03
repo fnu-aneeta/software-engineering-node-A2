@@ -13,7 +13,6 @@
  * Connects to a remote MongoDB instance hosted on the Atlas cloud database
  * service
  */
-import 'dotenv/config'
 import express, {Request, Response} from 'express';
 import CourseController from "./controllers/CourseController";
 import UserController from "./controllers/UserController";
