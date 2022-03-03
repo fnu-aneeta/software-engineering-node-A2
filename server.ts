@@ -13,6 +13,7 @@
  * Connects to a remote MongoDB instance hosted on the Atlas cloud database
  * service
  */
+import 'dotenv/config'
 import express, {Request, Response} from 'express';
 import CourseController from "./controllers/CourseController";
 import UserController from "./controllers/UserController";
@@ -23,17 +24,17 @@ import FollowController from "./controllers/FollowController";
 import BookmarkController from "./controllers/BookmarkController";
 import MessageController from "./controllers/MessageController";
 
+// require("dotenv").config();
 // build the connection string
-// const PROTOCOL = "mongodb+srv";
-// const DB_USERNAME = process.env.DB_USERNAME;
-// const DB_PASSWORD = process.env.DB_PASSWORD;
-// const HOST = "cluster0.m8jeh.mongodb.net";
-// const DB_NAME = "myFirstDatabase";
-// const DB_QUERY = "retryWrites=true&w=majority";
-// const connectionString = `${PROTOCOL}://${DB_USERNAME}:${DB_PASSWORD}@${HOST}/${DB_NAME}?${DB_QUERY}`;
+const PROTOCOL = "mongodb+srv";
+const DB_USERNAME = process.env.DB_USERNAME;
+const DB_PASSWORD = process.env.DB_PASSWORD;
+const HOST = "cluster0.wwlvx.mongodb.net";
+const DB_NAME = "Tuiter";
+const DB_QUERY = "retryWrites=true&w=majority";
+const connectionString = `${PROTOCOL}://${DB_USERNAME}:${DB_PASSWORD}@${HOST}/${DB_NAME}?${DB_QUERY}`;
 // connect to the database
-// mongoose.connect(connectionString);
-mongoose.connect('mongodb+srv://aneeta:&&Halogen4$@cluster0.wwlvx.mongodb.net/Tuiter?retryWrites=true&w=majority')
+mongoose.connect(connectionString);
 
 const app = express();
 app.use(express.json());
