@@ -22,6 +22,7 @@ import mongoose from "mongoose";
 import FollowController from "./controllers/FollowController";
 import BookmarkController from "./controllers/BookmarkController";
 import MessageController from "./controllers/MessageController";
+require('dotenv').config()
 
 // require("dotenv").config();
 // build the connection string
